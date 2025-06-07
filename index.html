@@ -201,26 +201,38 @@
             cursor: default;
         }
 
-       /* Hide desktop product container on mobile */
-@media (max-width: 768px) {
-    .product-desktop {
-        display: none !important;
-    }
-    .product-mobile {
-        display: block !important;
-    }
-}
+        /* Overlay for mobile remains unchanged */
+        @media (max-width: 768px) {
+            .product-card {
+                width: 49.5%;
+                /* Slightly bigger cards */
+                margin: 0.25%;
+                /* Small horizontal spacing */
+                box-sizing: border-box;
+            }
 
-/* Hide mobile version on desktop/tablet */
-@media (min-width: 769px) {
-    .product-desktop {
-        display: flex; /* or grid or block, depending on your layout */
-    }
-    .product-mobile {
-        display: none !important;
-    }
-}
+            .product-card .overlay-mobile-show {
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+            }
+        }
 
+
+        @media (min-width: 769px) {
+            .product-card {
+                width: 33.3333%;
+                /* 3 cards per row on larger screens */
+                margin: 0;
+                box-sizing: border-box;
+            }
+        }
     </style>
 
     <section id="products" class="py-16 px-6 bg-white text-center relative" style="max-width: 1080px; margin: auto;">
@@ -233,499 +245,364 @@
         <!-- Product container -->
         <div id="product-scroll">
 
-           <!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <!-- Slideshow Images -->
-    <div class="room-slideshow room-container relative" data-room="1">
-        <img src="https://i.pinimg.com/736x/b3/5e/be/b35ebeda415110e67100876c068c8152.jpg"
-            class="slide-1 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/21/b4/50/21b4500c8545c912dcd66abe66ec7b95.jpg"
-            class="slide-1 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/d2/ec/23/d2ec239aec114d2c9fcb1b17c574edfd.jpg"
-            class="slide-1 w-full h-[250px] object-cover hidden">
+            <!-- Stainless steel pipes -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <!-- Slideshow Images -->
+                <div class="room-slideshow room-container relative" data-room="1">
+                    <img src="https://i.pinimg.com/736x/b3/5e/be/b35ebeda415110e67100876c068c8152.jpg"
+                        class="slide-1 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/21/b4/50/21b4500c8545c912dcd66abe66ec7b95.jpg"
+                        class="slide-1 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/d2/ec/23/d2ec239aec114d2c9fcb1b17c574edfd.jpg"
+                        class="slide-1 w-full h-[250px] object-cover hidden">
 
-        <!-- Hover Overlay -->
-        <div
-            class="overlay-mobile-show absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Pipes</p>
-                <p class="text-sm sm:text-base">
-                    Stainless steel pipes offer long-lasting performance in both fluid handling and
-                    structural applications,
-                    thanks to their superior corrosion resistance and strength.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="overlay-mobile-show absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Pipes</p>
+                            <p class="text-sm sm:text-base">
+                                Stainless steel pipes offer long-lasting performance in both fluid handling and
+                                structural applications,
+                                thanks to their superior corrosion resistance and strength.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Pipes</h4>
+                    <p class="text-sm sm:text-base">Durable, Corrosion-Resistant Tubes for Fluid Transport and
+                        Structural Use</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Product Info -->
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Pipes</h4>
-        <p class="text-sm sm:text-base">Durable, Corrosion-Resistant Tubes for Fluid Transport and Structural Use</p>
-    </div>
-</div>
+            <!-- Stainless Steel Tubes -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <!-- Slideshow Images -->
+                <div class="room-slideshow room-container relative" data-room="2">
+                    <img src="https://i.pinimg.com/736x/08/5d/96/085d96cd9d92c8c40f78835fbf795d4d.jpg"
+                        class="slide-2 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/d0/ca/cb/d0cacb7ddb34ecbd47aa91b27eb120f5.jpg"
+                        class="slide-2 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/10/65/d6/1065d6f6eafe4cd685b0917ebf587bf6.jpg"
+                        class="slide-2 w-full h-[250px] object-cover hidden">
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/b3/5e/be/b35ebeda415110e67100876c068c8152.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Pipes</h4>
-        <p class="text-sm text-gray-700">
-            Durable, corrosion-resistant tubes for fluid transport and structural use. 
-        </p>
-    </div>
-</div>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Tubes</p>
+                            <p class="text-sm sm:text-base">
+                                Stainless steel tubes provide durability and resistance to corrosion, making them ideal
+                                for both structural frameworks and efficient fluid transport systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-
-            <!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <!-- Slideshow Images -->
-    <div class="room-slideshow room-container relative" data-room="2">
-        <img src="https://i.pinimg.com/736x/08/5d/96/085d96cd9d92c8c40f78835fbf795d4d.jpg"
-            class="slide-2 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/d0/ca/cb/d0cacb7ddb34ecbd47aa91b27eb120f5.jpg"
-            class="slide-2 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/10/65/d6/1065d6f6eafe4cd685b0917ebf587bf6.jpg"
-            class="slide-2 w-full h-[250px] object-cover hidden">
-
-        <!-- Hover Overlay -->
-        <div
-            class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Tubes</p>
-                <p class="text-sm sm:text-base">
-                    Stainless steel tubes provide durability and resistance to corrosion, making them ideal
-                    for both structural frameworks and efficient fluid transport systems.
-                </p>
+                <!-- Product Info -->
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Tubes</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Strong, Corrosion-Resistant Tubes for Structural and
+                        Fluid Applications</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Product Info -->
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Tubes</h4>
-        <p class="text-sm sm:text-base text-gray-600">
-            Strong, Corrosion-Resistant Tubes for Structural and Fluid Applications
-        </p>
-    </div>
-</div>
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/08/5d/96/085d96cd9d92c8c40f78835fbf795d4d.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Tubes</h4>
-        <p class="text-sm text-gray-700">
-            Durable and corrosion-resistant tubes for structure and fluid systems.
-        </p>
-    </div>
-</div>
+            <!-- Stainless Steel Decorative Sheets -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <!-- Slideshow Images -->
+                <div class="room-slideshow room-container relative" data-room="3">
+                    <img src="https://i.pinimg.com/736x/67/1d/d5/671dd5d25e9a560f4d1226f20870a2bc.jpg"
+                        class="slide-3 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/74/21/02/742102ef2f6bde591dd757f6c089fd48.jpg"
+                        class="slide-3 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/83/80/b1/8380b13ee5bc01bc43f19bd5f0b40df5.jpg"
+                        class="slide-3 w-full h-[250px] object-cover hidden">
 
-           <!-- ========== STAINLESS STEEL DECORATIVE SHEETS ========== -->
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Decorative Sheets</p>
+                            <p class="text-sm sm:text-base">
+                                Stainless steel decorative sheets combine durability with design, perfect for enhancing
+                                interior and exterior aesthetics in architectural spaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="3">
-        <img src="https://i.pinimg.com/736x/67/1d/d5/671dd5d25e9a560f4d1226f20870a2bc.jpg"
-            class="slide-3 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/74/21/02/742102ef2f6bde591dd757f6c089fd48.jpg"
-            class="slide-3 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/83/80/b1/8380b13ee5bc01bc43f19bd5f0b40df5.jpg"
-            class="slide-3 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Decorative Sheets</p>
-                <p class="text-sm sm:text-base">
-                    Stainless steel decorative sheets combine durability with design, perfect for enhancing
-                    interior and exterior aesthetics in architectural spaces.
-                </p>
+                <!-- Product Info -->
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Decorative Sheets</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Stylish, Corrosion-Resistant Panels for Modern
+                        Architectural Appeal</p>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Decorative Sheets</h4>
-        <p class="text-sm sm:text-base text-gray-600">Stylish, Corrosion-Resistant Panels for Modern Architectural Appeal</p>
-    </div>
-</div>
-
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/67/1d/d5/671dd5d25e9a560f4d1226f20870a2bc.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Decorative Sheets</h4>
-        <p class="text-sm text-gray-700">
-            Durable and decorative stainless steel sheets for architectural designs.
-        </p>
-    </div>
-</div>
 
 
-<!-- ========== STAINLESS STEEL PLATES ========== -->
+            <!-- Stainless Steel Plates -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="4">
+                    <img src="https://i.pinimg.com/736x/f4/17/7e/f4177e59523303409efc1d92bd8078c0.jpg"
+                        class="slide-4 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/72/f1/1c/72f11ca97e1b01d86d704806c72fb6b1.jpg"
+                        class="slide-4 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/f1/7f/c2/f17fc2d835ee6d25936659e9fd9a0a7a.jpg"
+                        class="slide-4 w-full h-[250px] object-cover hidden">
 
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="4">
-        <img src="https://i.pinimg.com/736x/f4/17/7e/f4177e59523303409efc1d92bd8078c0.jpg"
-            class="slide-4 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/72/f1/1c/72f11ca97e1b01d86d704806c72fb6b1.jpg"
-            class="slide-4 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/f1/7f/c2/f17fc2d835ee6d25936659e9fd9a0a7a.jpg"
-            class="slide-4 w-full h-[250px] object-cover hidden">
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Plates</p>
+                            <p class="text-sm sm:text-base">
+                                Stainless steel plates offer exceptional strength and durability, making them ideal for
+                                structural, manufacturing, and industrial applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Plates</p>
-                <p class="text-sm sm:text-base">
-                    Stainless steel plates offer exceptional strength and durability, making them ideal for structural, manufacturing, and industrial applications.
-                </p>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Plates</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Robust, Corrosion-Resistant Sheets for Heavy-Duty
+                        Industrial Use</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Plates</h4>
-        <p class="text-sm sm:text-base text-gray-600">Robust, Corrosion-Resistant Sheets for Heavy-Duty Industrial Use</p>
-    </div>
-</div>
+            <!-- Stainless Steel Coils -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="5">
+                    <img src="https://i.pinimg.com/736x/14/6b/3b/146b3be2c31c8ce03c62aee051d71ef7.jpg"
+                        class="slide-5 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/5c/07/fb/5c07fba545c24f66cd53ee165092a0d0.jpg"
+                        class="slide-5 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/0f/17/da/0f17da45e490a11eb8b0b7fdf06f9068.jpg"
+                        class="slide-5 w-full h-[250px] object-cover hidden">
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/f4/17/7e/f4177e59523303409efc1d92bd8078c0.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Plates</h4>
-        <p class="text-sm text-gray-700">
-            Strong and durable steel plates for industrial-grade applications.
-        </p>
-    </div>
-</div>
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Coils</p>
+                            <p class="text-sm sm:text-base">
+                                Stainless steel coils are flexible, corrosion-resistant sheets ideal for use in
+                                construction, manufacturing, and automotive components.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- ========== STAINLESS STEEL COILS ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="5">
-        <img src="https://i.pinimg.com/736x/14/6b/3b/146b3be2c31c8ce03c62aee051d71ef7.jpg"
-            class="slide-5 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/5c/07/fb/5c07fba545c24f66cd53ee165092a0d0.jpg"
-            class="slide-5 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/0f/17/da/0f17da45e490a11eb8b0b7fdf06f9068.jpg"
-            class="slide-5 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Coils</p>
-                <p class="text-sm sm:text-base">
-                    Stainless steel coils are flexible, corrosion-resistant sheets ideal for use in construction, manufacturing, and automotive components.
-                </p>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Coils</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Versatile Rolled Sheets for Industrial and Structural
+                        Versatility</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Coils</h4>
-        <p class="text-sm sm:text-base text-gray-600">Versatile Rolled Sheets for Industrial and Structural Versatility</p>
-    </div>
-</div>
+            <!-- Duplex Steel -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="6">
+                    <img src="https://i.pinimg.com/736x/2b/65/75/2b65753632e6a30e1e344eb29b6767af.jpg"
+                        class="slide-6 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/6e/dd/5e/6edd5e9fa5146eb17737fb3ac36b2dc7.jpg"
+                        class="slide-6 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/f7/02/94/f70294f0932df6a87cc83dccf2f5ba30.jpg"
+                        class="slide-6 w-full h-[250px] object-cover hidden">
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/14/6b/3b/146b3be2c31c8ce03c62aee051d71ef7.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Coils</h4>
-        <p class="text-sm text-gray-700">
-            Flexible, corrosion-resistant coils for structural and industrial applications.
-        </p>
-    </div>
-</div>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Duplex Steel</p>
+                            <p class="text-sm sm:text-base">
+                                Robust alloy combining austenitic and ferritic stainless steel. Superior strength and
+                                excellent resistance to stress corrosion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-
-<!-- ========== DUPLEX STEEL ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="6">
-        <img src="https://i.pinimg.com/736x/2b/65/75/2b65753632e6a30e1e344eb29b6767af.jpg"
-            class="slide-6 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/6e/dd/5e/6edd5e9fa5146eb17737fb3ac36b2dc7.jpg"
-            class="slide-6 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/f7/02/94/f70294f0932df6a87cc83dccf2f5ba30.jpg"
-            class="slide-6 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Duplex Steel</p>
-                <p class="text-sm sm:text-base">
-                    Robust alloy combining austenitic and ferritic stainless steel. Superior strength and excellent resistance to stress corrosion.
-                </p>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Duplex Steel</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Superior Strength with Stress Corrosion Resistance</p>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Duplex Steel</h4>
-        <p class="text-sm sm:text-base text-gray-600">Superior Strength with Stress Corrosion Resistance</p>
-    </div>
-</div>
-
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/2b/65/75/2b65753632e6a30e1e344eb29b6767af.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Duplex Steel</h4>
-        <p class="text-sm text-gray-700">
-            High-strength, corrosion-resistant alloy for demanding industrial use.
-        </p>
-    </div>
-</div>
 
 
-            <!-- ========== STAINLESS STEEL ANGLE BAR ========== -->
+            <!-- Stainless Steel Angle Bar -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="7">
+                    <img src="https://i.pinimg.com/736x/c2/42/23/c24223e379fe84557b93ab7636a59d75.jpg"
+                        class="slide-7 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/0c/2c/90/0c2c905c581f76ef289f86ae6265b1d1.jpg"
+                        class="slide-7 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/b8/ee/b3/b8eeb37b6886ce048e97e8592502e316.jpg"
+                        class="slide-7 w-full h-[250px] object-cover hidden">
 
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="7">
-        <img src="https://i.pinimg.com/736x/c2/42/23/c24223e379fe84557b93ab7636a59d75.jpg"
-            class="slide-7 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/0c/2c/90/0c2c905c581f76ef289f86ae6265b1d1.jpg"
-            class="slide-7 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/b8/ee/b3/b8eeb37b6886ce048e97e8592502e316.jpg"
-            class="slide-7 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Angle Bar</p>
-                <p class="text-sm sm:text-base">
-                    Durable L-shaped profiles designed for structural reinforcement and framing. Corrosion-resistant and strong.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Angle Bar</p>
+                            <p class="text-sm sm:text-base">
+                                Durable L-shaped profiles designed for structural reinforcement and framing.
+                                Corrosion-resistant and strong.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Angle Bar</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Reinforced L-Profiles for Structural Applications</p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Angle Bar</h4>
-        <p class="text-sm sm:text-base text-gray-600">Reinforced L-Profiles for Structural Applications</p>
-    </div>
-</div>
+            <!-- Stainless Steel Circle -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="8">
+                    <img src="https://i.pinimg.com/736x/41/c5/b0/41c5b0c019278b7246a5c36cc8ba4b7f.jpg"
+                        class="slide-8 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/c4/4c/a4/c44ca434db7cf26cd9f56fa88c2bc8c2.jpg"
+                        class="slide-8 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/fc/2c/9e/fc2c9e79c1116673e3dc5276e9f149ae.jpg"
+                        class="slide-8 w-full h-[250px] object-cover hidden">
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/c2/42/23/c24223e379fe84557b93ab7636a59d75.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Angle Bar</h4>
-        <p class="text-sm text-gray-700">
-            Durable and corrosion-resistant L-profiles for industrial support structures.
-        </p>
-    </div>
-</div>
-
-
-<!-- ========== STAINLESS STEEL CIRCLE ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="8">
-        <img src="https://i.pinimg.com/736x/41/c5/b0/41c5b0c019278b7246a5c36cc8ba4b7f.jpg"
-            class="slide-8 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/c4/4c/a4/c44ca434db7cf26cd9f56fa88c2bc8c2.jpg"
-            class="slide-8 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/fc/2c/9e/fc2c9e79c1116673e3dc5276e9f149ae.jpg"
-            class="slide-8 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Circle</p>
-                <p class="text-sm sm:text-base">
-                    Flat, corrosion-resistant discs ideal for cookware, automotive parts, and industrial applications.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Circle</p>
+                            <p class="text-sm sm:text-base">
+                                Flat, corrosion-resistant discs ideal for cookware, automotive parts, and industrial
+                                applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Circle</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Precision-Cut Discs for Industrial & Decorative Use
+                    </p>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Circle</h4>
-        <p class="text-sm sm:text-base text-gray-600">Precision-Cut Discs for Industrial & Decorative Use</p>
-    </div>
-</div>
+            <!-- Stainless Steel Wires -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="9">
+                    <img src="https://i.pinimg.com/736x/8b/8a/87/8b8a87337ee554f7c400dd5742d5df1d.jpg"
+                        class="slide-9 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/a9/2a/81/a92a816eef9ce7850fc325f9245c496a.jpg"
+                        class="slide-9 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/d6/dd/7c/d6dd7c855a3dbaf5c6389bd2270520d0.jpg"
+                        class="slide-9 w-full h-[250px] object-cover hidden">
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/41/c5/b0/41c5b0c019278b7246a5c36cc8ba4b7f.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Circle</h4>
-        <p class="text-sm text-gray-700">
-            Corrosion-resistant discs for cookware, machinery, and industrial fabrication.
-        </p>
-    </div>
-</div>
-
-
-          <!-- ========== STAINLESS STEEL WIRES ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="9">
-        <img src="https://i.pinimg.com/736x/8b/8a/87/8b8a87337ee554f7c400dd5742d5df1d.jpg"
-            class="slide-9 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/a9/2a/81/a92a816eef9ce7850fc325f9245c496a.jpg"
-            class="slide-9 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/d6/dd/7c/d6dd7c855a3dbaf5c6389bd2270520d0.jpg"
-            class="slide-9 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Wires</p>
-                <p class="text-sm sm:text-base">
-                    Flexible and corrosion-resistant strands suited for electrical, fencing, and industrial production uses.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Wires</p>
+                            <p class="text-sm sm:text-base">
+                                Flexible and corrosion-resistant strands suited for electrical, fencing, and industrial
+                                production uses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Wires</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Corrosion-Resistant Strands for Industrial Versatility
+                    </p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Wires</h4>
-        <p class="text-sm sm:text-base text-gray-600">Corrosion-Resistant Strands for Industrial Versatility</p>
-    </div>
-</div>
-
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/8b/8a/87/8b8a87337ee554f7c400dd5742d5df1d.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Wires</h4>
-        <p class="text-sm text-gray-700">
-            Flexible, corrosion-resistant strands used across electrical and industrial applications.
-        </p>
-    </div>
-</div>
 
 
-<!-- ========== STAINLESS STEEL T PATTI ========== -->
 
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="10">
-        <img src="https://i.pinimg.com/736x/03/5c/ac/035cacbdb46e4d3c92f88724e20e5fac.jpg"
-            class="slide-10 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/20/00/89/200089f22b0864460ed1d12d8466fd3e.jpg"
-            class="slide-10 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/8f/23/a0/8f23a08ec109ce03b5261c35f307ec68.jpg"
-            class="slide-10 w-full h-[250px] object-cover hidden">
+            <!-- Stainless Steel T Patti -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="10">
+                    <img src="https://i.pinimg.com/736x/03/5c/ac/035cacbdb46e4d3c92f88724e20e5fac.jpg"
+                        class="slide-10 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/20/00/89/200089f22b0864460ed1d12d8466fd3e.jpg"
+                        class="slide-10 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/8f/23/a0/8f23a08ec109ce03b5261c35f307ec68.jpg"
+                        class="slide-10 w-full h-[250px] object-cover hidden">
 
-        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel T Patti</p>
-                <p class="text-sm sm:text-base">
-                    Durable, corrosion-resistant T-shaped strips used in framing, structure, and decorative trims.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel T Patti</p>
+                            <p class="text-sm sm:text-base">
+                                Durable, corrosion-resistant T-shaped strips used in framing, structure, and decorative
+                                trims.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel T Patti</h4>
+                    <p class="text-sm sm:text-base text-gray-600">T-Shaped Strength for Structure and Style</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel T Patti</h4>
-        <p class="text-sm sm:text-base text-gray-600">T-Shaped Strength for Structure and Style</p>
-    </div>
-</div>
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/03/5c/ac/035cacbdb46e4d3c92f88724e20e5fac.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel T Patti</h4>
-        <p class="text-sm text-gray-700">
-            Corrosion-resistant T-strips for framing, structural support, and decorative detailing.
-        </p>
-    </div>
-</div>
+            <!-- Stainless Steel Pipes & Fittings -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="11">
+                    <img src="https://i.pinimg.com/736x/8e/f0/bd/8ef0bd1d21d74fc221bbda1776dcb5c3.jpg"
+                        class="slide-11 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/bb/d8/a0/bbd8a0c468dc81eb013173570db84be5.jpg"
+                        class="slide-11 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/9e/2b/e5/9e2be58d36bb20ee9eeecde2093754cd.jpg"
+                        class="slide-11 w-full h-[250px] object-cover hidden">
 
-
-<!-- ========== STAINLESS STEEL PIPES & FITTINGS ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="11">
-        <img src="https://i.pinimg.com/736x/8e/f0/bd/8ef0bd1d21d74fc221bbda1776dcb5c3.jpg"
-            class="slide-11 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/bb/d8/a0/bbd8a0c468dc81eb013173570db84be5.jpg"
-            class="slide-11 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/9e/2b/e5/9e2be58d36bb20ee9eeecde2093754cd.jpg"
-            class="slide-11 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Pipes & Fittings</p>
-                <p class="text-sm sm:text-base">
-                    Corrosion-resistant components ensuring fluid flow for plumbing, mechanical, and industrial systems.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Stainless Steel Pipes & Fittings</p>
+                            <p class="text-sm sm:text-base">
+                                Corrosion-resistant components ensuring fluid flow for plumbing, mechanical, and
+                                industrial systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Pipes & Fittings</h4>
+                    <p class="text-sm sm:text-base text-gray-600">Reliable Flow with Precision Connections</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Stainless Steel Pipes & Fittings</h4>
-        <p class="text-sm sm:text-base text-gray-600">Reliable Flow with Precision Connections</p>
-    </div>
-</div>
 
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/8e/f0/bd/8ef0bd1d21d74fc221bbda1776dcb5c3.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Stainless Steel Pipes & Fittings</h4>
-        <p class="text-sm text-gray-700">
-            Engineered for efficient plumbing and mechanical systems with long-term corrosion resistance.
-        </p>
-    </div>
-</div>
+            <!-- Blooms -->
+            <div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2">
+                <div class="room-slideshow room-container relative" data-room="12">
+                    <img src="https://i.pinimg.com/736x/81/7b/df/817bdfe88620a04191f4a457e843e9b5.jpg"
+                        class="slide-12 w-full h-[250px] object-cover block">
+                    <img src="https://i.pinimg.com/736x/e9/82/8b/e9828ba4241152ff08f2669115691a63.jpg"
+                        class="slide-12 w-full h-[250px] object-cover hidden">
+                    <img src="https://i.pinimg.com/736x/c7/43/1c/c7431ca7cf3aa9e22f00a831cda47d1f.jpg"
+                        class="slide-12 w-full h-[250px] object-cover hidden">
 
-           <!-- ========== BLOOMS ========== -->
-
-<!-- DESKTOP/TABLET PRODUCT CARD -->
-<div class="product-card group relative overflow-hidden rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3 p-2 hidden md:block">
-    <div class="room-slideshow room-container relative" data-room="12">
-        <img src="https://i.pinimg.com/736x/81/7b/df/817bdfe88620a04191f4a457e843e9b5.jpg"
-            class="slide-12 w-full h-[250px] object-cover block">
-        <img src="https://i.pinimg.com/736x/e9/82/8b/e9828ba4241152ff08f2669115691a63.jpg"
-            class="slide-12 w-full h-[250px] object-cover hidden">
-        <img src="https://i.pinimg.com/736x/c7/43/1c/c7431ca7cf3aa9e22f00a831cda47d1f.jpg"
-            class="slide-12 w-full h-[250px] object-cover hidden">
-
-        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
-            <div class="text-white text-center max-w-xs sm:max-w-md break-words">
-                <p class="text-base sm:text-lg font-semibold mb-2">Blooms</p>
-                <p class="text-sm sm:text-base">
-                    Semi-finished steel blocks used as raw material in rolling mills to form bars, plates, and shapes.
-                </p>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/60 opacity-0 overlay-mobile-show group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+                        <div class="text-white text-center max-w-xs sm:max-w-md break-words">
+                            <p class="text-base sm:text-lg font-semibold mb-2">Blooms</p>
+                            <p class="text-sm sm:text-base">
+                                Semi-finished steel blocks used as raw material in rolling mills to form bars, plates,
+                                and shapes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Blooms</h4>
+                    <p class="text-sm sm:text-base text-gray-600">The Foundation of Stainless Strength</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="p-4">
-        <h4 class="text-lg sm:text-xl font-semibold mb-2">Blooms</h4>
-        <p class="text-sm sm:text-base text-gray-600">The Foundation of Stainless Strength</p>
-    </div>
-</div>
-
-<!-- MOBILE PRODUCT CARD -->
-<div class="block md:hidden bg-white rounded-lg shadow-md overflow-hidden mb-4">
-    <img src="https://i.pinimg.com/736x/81/7b/df/817bdfe88620a04191f4a457e843e9b5.jpg"
-        class="w-full h-[220px] object-cover">
-    <div class="p-4">
-        <h4 class="text-lg font-semibold mb-2">Blooms</h4>
-        <p class="text-sm text-gray-700">
-            Semi-finished steel blocks used as raw material in rolling mills to form bars, plates, and shapes.
-        </p>
-    </div>
-</div>
 
 
 
@@ -733,14 +610,15 @@
     </section>
 
     <script>
-    // Run only on desktop/tablet
-    if (window.innerWidth > 768) {
+        // Script for the products part
+
         const cards = Array.from(document.querySelectorAll('.product-card'));
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
 
         let currentIndex = 0;
 
+        // Returns cards per page depending on screen width
         function getCardsPerPage() {
             return window.innerWidth <= 768 ? 2 : 3;
         }
@@ -749,12 +627,13 @@
             const cardsPerPage = getCardsPerPage();
             const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-            // Hide all cards
+            // Hide all cards first
             cards.forEach(card => card.classList.add('hidden'));
 
             // Show cards for current page
             const start = index * cardsPerPage;
             const end = start + cardsPerPage;
+
             cards.slice(start, end).forEach(card => card.classList.remove('hidden'));
 
             // Enable/disable buttons
@@ -763,6 +642,9 @@
         }
 
         prevBtn.addEventListener('click', () => {
+            const cardsPerPage = getCardsPerPage();
+            const totalPages = Math.ceil(cards.length / cardsPerPage);
+
             if (currentIndex > 0) {
                 currentIndex--;
                 showCards(currentIndex);
@@ -772,25 +654,30 @@
         nextBtn.addEventListener('click', () => {
             const cardsPerPage = getCardsPerPage();
             const totalPages = Math.ceil(cards.length / cardsPerPage);
+
             if (currentIndex < totalPages - 1) {
                 currentIndex++;
                 showCards(currentIndex);
             }
         });
 
+        // Update cards when window is resized (important for responsiveness)
         window.addEventListener('resize', () => {
             const cardsPerPage = getCardsPerPage();
             const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+            // Adjust currentIndex if out of range after resize
             if (currentIndex > totalPages - 1) {
                 currentIndex = totalPages - 1;
             }
+
             showCards(currentIndex);
         });
 
         // Show initial cards
         showCards(currentIndex);
 
-        // Slideshow function
+        // Slideshow function for each room
         function startRoomSlideshow(roomNumber, className) {
             let index = 0;
             const slides = document.querySelectorAll(`.${className}`);
@@ -804,12 +691,15 @@
             showSlide();
         }
 
-        // Start slideshows for all rooms 1–12
+        // Start slideshow for all rooms 1 to 12
         for (let i = 1; i <= 12; i++) {
             startRoomSlideshow(i, `slide-${i}`);
         }
-    }
-</script>
+    </script>
+
+
+
+
 
     <!-- Overlay content text script-->
     <script>
