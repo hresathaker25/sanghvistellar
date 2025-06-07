@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Sanghvi SteelFab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-900 font-sans">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-8 py-4 shadow-md bg-white fixed top-0 w-full z-50">
+    <!-- Logo linking to index.html -->
+    <a href="index.html" class="flex items-center space-x-4">
+      <img src="logo.png" class="h-24 object-contain shadow-md" alt="Sanghvi SteelFab Logo" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex space-x-8 text-gray-700 text-lg">
+      <a href="index.html" class="hover:text-blue-500 transition duration-300">Home</a>
+      <a href="index.html" class="hover:text-blue-500 transition duration-300">Products</a>
+      <a href="aboutus.html" class="hover:text-blue-500 transition duration-300">About Us</a>
+      <a href="contactus.html" class="hover:text-blue-500 transition duration-300">Contact Us</a>
+    </nav>
+
+    <!-- Hamburger on right for mobile -->
+    <button id="menu-btn" class="block md:hidden focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile sidebar menu sliding from right -->
+  <div id="mobile-menu"
+    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <nav class="flex flex-col mt-20 space-y-6 px-6">
+      <a href="index.html" class="text-gray-700 text-lg hover:text-blue-500">Home</a>
+      <a href="index.html" class="text-gray-700 text-lg hover:text-blue-500">Products</a>
+      <a href="aboutus.html" class="text-gray-700 text-lg hover:text-blue-500">About Us</a>
+      <a href="contactus.html" class="text-gray-700 text-lg hover:text-blue-500">Contact Us</a>
+    </nav>
+  </div>
+
+  <!-- Spacer to avoid content hidden under fixed navbar -->
+  <div class="h-24"></div>
+
+  <!-- Main content here -->
+  <main class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-10 mb-16 border border-gray-200">
+
+    <!-- Values Section -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600 border-b border-blue-400 inline-block pb-1">Values</h2>
+      <p class="text-lg mb-6">
+        We always uphold excellence across products through quality and innovation. We are also committed towards safety
+        and sustainability with a long-term focus.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border border-gray-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <img src="https://i.pinimg.com/736x/ef/56/a5/ef56a59f629bd403ab6d3612d9a50ef4.jpg" alt="Safety"
+            class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Safety</h3>
+          <p>Safety is a prime concern for us, be it employees, equipment, or environment.</p>
+        </div>
+
+        <div class="border border-gray-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <img src="https://i.pinimg.com/736x/95/4b/76/954b766aca1e50593fa880bbf8e23e6b.jpg" alt="Sustainability"
+            class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Sustainability</h3>
+          <p>Sustainability is an integral part of Sanghvi SteelFab's strategy & is present in all aspects of
+            operations.</p>
+        </div>
+
+        <div class="border border-gray-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <img src="https://i.pinimg.com/736x/7d/b5/ef/7db5ef9e8eb1cfc272058220fe38fa82.jpg" alt="Quality"
+            class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Quality</h3>
+          <p>Our unwavering commitment to delivering uncompromising quality acts as the base of our enduring reputation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CEO Section -->
+    <section class="md:flex md:items-center md:gap-10 mb-10">
+      <div class="flex-shrink-0 w-48 h-48 rounded-full overflow-hidden border border-gray-300 shadow-md mb-6 md:mb-0">
+        <img src="VishalShahPhoto.jpg" alt="CEO Vishal Shah" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <h2 class="text-3xl font-semibold mb-4 text-gray-900">Our CEO</h2>
+        <p class="text-lg text-gray-700">
+          Mr. Vishal Shah, with decades of experience, leads Sanghvi SteelFab towards innovation and excellence.
+          His vision of blending tradition with cutting-edge technology propels our growth and sustainability
+          initiatives.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section
+      class="flex flex-col md:flex-row items-center gap-8 p-6 rounded-lg bg-blue-50 border border-blue-300 text-blue-900 shadow-md mb-12">
+      <div class="flex-1 italic text-2xl relative pl-6">
+        <span class="absolute left-0 top-0 text-6xl font-bold text-blue-400 select-none" aria-hidden="true">“</span>
+        <h2 class="font-semibold leading-tight">
+          Our work does make sense<br />only if it is a faithful witness<br />of his time.
+        </h2>
+        <p class="mt-4 font-semibold text-blue-600">Jean-Philippe Nuel, Director</p>
+      </div>
+      <div class="flex-1 max-w-md rounded overflow-hidden shadow-md">
+        <img src="https://i.pinimg.com/736x/f1/37/b1/f137b1914b1b9358e9ff9c0a76b852f3.jpg" alt="Team Work"
+          class="w-full h-full object-cover" />
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center text-gray-800">
+
+        <div
+          class="stat-box p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <div class="text-4xl text-blue-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" class="mx-auto w-12 h-12">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM12 14c-5 0-7 2-7 5v1h14v-1c0-3-2-5-7-5z" />
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-1">10</h3>
+          <p class="uppercase text-sm font-semibold">Workers Employed</p>
+        </div>
+
+        <div
+          class="stat-box p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <div class="text-4xl text-blue-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" class="mx-auto w-12 h-12">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 7v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7M7 10h10M7 14h4" />
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-1">50</h3>
+          <p class="uppercase text-sm font-semibold">Annual Turnover (Crore)</p>
+        </div>
+
+        <div
+          class="stat-box p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <div class="text-4xl text-blue-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" class="mx-auto w-12 h-12">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18" />
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-1">1999</h3>
+          <p class="uppercase text-sm font-semibold">Year of Establishment</p>
+        </div>
+
+        <div
+          class="stat-box p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-default">
+          <div class="text-4xl text-blue-600 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" class="mx-auto w-12 h-12">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20l9-5-9-5-9 5 9 5zM12 12v8" />
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-1">868</h3>
+          <p class="uppercase text-sm font-semibold">Products</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-500 text-white text-center py-6 mt-10">
+    <p class="text-sm">Designed by Sanghvi SteelFab</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('translate-x-full');
+    });
+
+    // Close mobile menu when any link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+    });
+  </script>
+</body>
+
+</html>
